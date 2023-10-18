@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world_4/shopping_provider.dart';
 import 'package:hello_world_4/shopping_page.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
@@ -30,7 +32,8 @@ class _MyAppState extends State<MyApp> {
           const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
         ],
       ),
-      home: const ShoppingPage(),
+      home: ChangeNotifierProvider(
+          create: (context) => ShoppingProvider(), child: const ShoppingPage()),
     );
   }
 }

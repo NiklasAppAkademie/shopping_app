@@ -10,31 +10,13 @@ class ShoppingPage extends StatefulWidget {
 }
 
 class _ShoppingPageState extends State<ShoppingPage> {
-  List<String> items = ["Cola", "Apfel", "Wasser", "Bier"];
-  List selectedItems = [];
-
-  void selectItem(String item) {
-    debugPrint("Item wurde zum Warenkorb hinzugefügt: $item");
-    setState(() {
-      selectedItems.add(item);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
-            ItemList(
-              items: items,
-              onClick: selectItem,
-            ),
-            ShoppingCart(
-              items: selectedItems,
-            )
-          ],
+          children: [ItemList(), ShoppingCart()],
         ),
       ),
     );
