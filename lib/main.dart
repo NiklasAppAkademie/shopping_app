@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world_4/item_provider.dart';
 import 'package:hello_world_4/shopping_provider.dart';
 import 'package:hello_world_4/shopping_page.dart';
 import 'package:provider/provider.dart';
@@ -32,8 +33,17 @@ class _MyAppState extends State<MyApp> {
           const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
         ],
       ),
-      home: ChangeNotifierProvider(
-          create: (context) => ShoppingProvider(), child: const ShoppingPage()),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => ItemProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => ShoppingProvider(),
+          )
+        ],
+        child: const ShoppingPage(),
+      ),
     );
   }
 }

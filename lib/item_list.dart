@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world_4/item.dart';
-import 'package:hello_world_4/shopping_provider.dart';
+import 'package:hello_world_4/item_provider.dart';
 import 'package:provider/provider.dart';
 
 class ItemList extends StatelessWidget {
@@ -8,7 +8,7 @@ class ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ShoppingProvider>(builder: (context, data, child) {
+    return Consumer<ItemProvider>(builder: (context, data, child) {
       return Expanded(
         child: ListView(
           children: data.items

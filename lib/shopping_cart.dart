@@ -10,10 +10,10 @@ class ShoppingCart extends StatelessWidget {
     return Consumer<ShoppingProvider>(builder: (context, data, child) {
       return Container(
         padding: const EdgeInsets.all(8.0),
-        decoration: BoxDecoration(color: Colors.red),
+        decoration: const BoxDecoration(color: Colors.red),
         child: Text(
           "Jetzt ${data.selectedItems.length.toString()} Artikel Kaufen",
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
         ),
       );
